@@ -20,7 +20,7 @@ public class CashCardController {
 
     @GetMapping("/{requestedId}")
     private ResponseEntity<CashCard> findById(
-            @PathVariable(required = true) Long requestedId) {
+            @PathVariable(required = true, value = "requestedId") Long requestedId) {
         Optional<CashCard> cashCardOptional = cashCardRepository.findById(requestedId);
 
         if (cashCardOptional.isPresent()) {
